@@ -48,7 +48,8 @@ export const companyData = {
         "Postes ranurados de 12×12 cm y 14×14 cm con fundación sólida",
         "Alturas estándar de 1.80m, 2.00m y 2.50m libres"
       ],
-      badge: "Pandereta Reforzada"
+      badge: "Pandereta Reforzada",
+      image: "/991afa4a-daf2-40db-8146-68815b0b439d.jpg"
     },
     {
       id: "cierres-perimetrales-terreno",
@@ -63,7 +64,8 @@ export const companyData = {
         "Fundación aislada de 60 cm en cada poste para máxima estabilidad",
         "Coordinación de portones vehiculares y peatonales a juego"
       ],
-      badge: "Instalación Llave en Mano"
+      badge: "Instalación Llave en Mano",
+      image: "/991afa4a-daf2-40db-8146-68815b0b439d.jpg"
     },
     {
       id: "prefabricados-hormigon-puerto-montt",
@@ -78,7 +80,8 @@ export const companyData = {
         "Canaletas a piso 1 metro con rejilla metálica galvanizada ($13.990 c/u)",
         "Stock permanente para retiro en planta o despacho a terreno"
       ],
-      badge: "Precios de Fábrica"
+      badge: "Precios de Fábrica",
+      image: "/991afa4a-daf2-40db-8146-68815b0b439d.jpg"
     },
     {
       id: "bardas-hidraulicas",
@@ -93,7 +96,8 @@ export const companyData = {
         "Hormigón impermeable con aditivo hidrófugo integrado",
         "Acabado liso listo para pintar o dejar a la vista"
       ],
-      badge: "Sellado Corta-Gotera"
+      badge: "Sellado Corta-Gotera",
+      image: "/991afa4a-daf2-40db-8146-68815b0b439d.jpg"
     },
     {
       id: "galpones-modulares",
@@ -108,7 +112,8 @@ export const companyData = {
         "Cálculo adaptado a vientos del sur de Chile",
         "Complemento ideal para terrenos con cierres perimetrales"
       ],
-      badge: "Montaje Rápido"
+      badge: "Montaje Rápido",
+      image: "/assets/galpon-industrial.jpg"
     }
   ],
   engineering: {
@@ -166,11 +171,79 @@ export const companyData = {
   },
   productCategories: [
     { id: "all", name: "Todos los Productos", icon: "LayoutGrid" },
+    { id: "panderetas", name: "Panderetas de Hormigón", icon: "ShieldCheck" },
+    { id: "fundaciones", name: "Apoyos & Cámaras", icon: "Building2" },
     { id: "pavimentos", name: "Pastelones & Pisos", icon: "Layers" },
     { id: "confinamiento", name: "Solerillas & Confinamiento", icon: "ShieldCheck" },
     { id: "drenaje", name: "Canaletas & Drenaje", icon: "CircleDot" }
   ],
   products: [
+    {
+      id: "pandereta-hormigon-g35",
+      name: "Panderetas de Hormigón G35",
+      price: "Desde $37.000",
+      priceRaw: 37000,
+      priceUnit: "metro lineal",
+      category: "panderetas",
+      categoryName: "Panderetas de Hormigón",
+      desc: "Cierre perimetral de pandereta reforzada fabricada con hormigón estructural G35 y armadura interior de acero. Altura libre de 2 metros para máxima seguridad.",
+      format: "2 metros de altura",
+      useCase: "Cierres perimetrales para parcelas residenciales, sitios urbanos, condominios y galpones en la Región de Los Lagos.",
+      highlight: "Hormigón estructural G35 reforzado",
+      specs: [
+        "Altura útil: 2.00 metros libres (placas premoldeadas encastradas)",
+        "Elaborada con hormigón estructural G35 de alta resistencia",
+        "Malla de acero electrosoldada de alta resistencia en cada placa",
+        "Postes ranurados de hormigón reforzado para fundación sólida en terreno",
+        "Valor referencial desde $37.000 por metro lineal instalado o en obra"
+      ],
+      badge: "Desde $37.000 / m lineal",
+      image: "/productos/panderetas-hormigon-g35.jpeg"
+    },
+    {
+      id: "apoyo-hormigon",
+      name: "Apoyo de Hormigón",
+      price: "$4.700",
+      priceRaw: 4700,
+      priceUnit: "c/u",
+      category: "fundaciones",
+      categoryName: "Apoyos & Cámaras",
+      desc: "Polín o poyo prefabricado de hormigón piramidal con espárrago de fierro estriado superior. Ideal para apoyo estructural y nivelación de vigas maestras.",
+      format: "Base 20×20 cm · Sup 10×10 cm · Alto 30 cm",
+      useCase: "Apoyo y elevación de pisos de madera, terrazas, radieres livianos, bodegas y quinchos sin contacto húmedo con el suelo.",
+      highlight: "Incluye fierro estriado de anclaje",
+      specs: [
+        "Dimensiones: Base inferior 20 × 20 cm, Cúspide 10 × 10 cm, Altura 30 cm",
+        "Espárrago de fierro estriado superior doblado para anclaje a madera o metal",
+        "Hormigón vibrado de alta compactación y baja absorción capilar",
+        "Aísla la estructura de madera de la humedad y saturación del terreno",
+        "Instalación ágil sin requerir encofrado in situ"
+      ],
+      badge: "$4.700 c/u",
+      image: "/productos/apoyo-hormigon.jpg"
+    },
+    {
+      id: "camara-electrica-hormigon",
+      name: "Cámara Eléctrica de Hormigón",
+      price: "Desde $68.000",
+      priceRaw: 68000,
+      priceUnit: "c/u",
+      category: "fundaciones",
+      categoryName: "Apoyos & Cámaras",
+      desc: "Cámara de inspección subterránea de hormigón con perforaciones pasamuros para canalizaciones eléctricas y empalmes en parcelaciones.",
+      format: "Ext 52×52 cm · Int 40×40 cm · Alto 60 cm",
+      useCase: "Canalizaciones subterráneas de media y baja tensión, empalmes eléctricos, derivaciones y cámaras de paso en loteos.",
+      highlight: "Espesor de 6 cm con perforaciones para ductos",
+      specs: [
+        "Dimensiones exteriores: 52 × 52 cm de base × 60 cm de altura",
+        "Dimensiones interiores: 40 × 40 cm libres × 60 cm de profundidad",
+        "Espesor perimetral de pared: 6 cm de hormigón vibrado de alta densidad",
+        "Perforaciones laterales integradas para paso de tuberías y ductos conduit",
+        "Resistente a la presión del terreno y humedad subterránea austral"
+      ],
+      badge: "Desde $68.000",
+      image: "/productos/camara-electrica-hormigon.jpg"
+    },
     {
       id: "pastelon-hormigon",
       name: "Pastelón de Hormigón",

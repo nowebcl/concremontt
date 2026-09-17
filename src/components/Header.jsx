@@ -43,14 +43,14 @@ export default function Header({ onOpenQuote }) {
             : 'bg-gradient-to-b from-black/85 via-black/40 to-transparent pt-3.5 pb-3 md:pt-7 md:pb-5 lg:pt-8 lg:pb-6'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between w-full">
           
           {/* Brand Logo: Más grande en PC (md:h-12 lg:h-14) y destacado en móvil (h-10 sm:h-11) */}
           <a 
             href="#inicio" 
             onClick={(e) => handleNavClick(e, '#inicio')}
             aria-label="Ir al inicio de Inversiones Concremontt"
-            className="flex items-center gap-2 transition-opacity hover:opacity-90"
+            className="flex items-center gap-2 transition-opacity hover:opacity-90 flex-shrink-0 max-w-[70%] sm:max-w-none"
           >
             <img 
               src={companyData.media.logo} 
@@ -77,7 +77,7 @@ export default function Header({ onOpenQuote }) {
           </nav>
 
           {/* Right Action Area */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-shrink-0">
             {/* Botón Cotizar Ahora - Exclusivo en PC con proporción armónica */}
             <button
               onClick={() => onOpenQuote()}
@@ -90,7 +90,7 @@ export default function Header({ onOpenQuote }) {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Abrir menú de navegación"
-              className="md:hidden p-2 rounded-xl text-slate-200 hover:text-white flex flex-col items-end justify-center focus:outline-none touch-press w-10 h-10"
+              className="md:hidden p-2 rounded-xl text-slate-200 hover:text-white flex flex-col items-end justify-center focus:outline-none touch-press w-10 h-10 flex-shrink-0"
             >
               {mobileMenuOpen ? (
                 <X className="w-5 h-5 text-white" />

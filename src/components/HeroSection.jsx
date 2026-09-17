@@ -151,18 +151,18 @@ export default function HeroSection({ onOpenQuote }) {
       })}
 
       {/* Hero Content (Left Aligned - Industrus Slider Typography) */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 lg:px-14 w-full pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24">
-        <div className="max-w-2xl text-left">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 w-full max-w-full pt-28 sm:pt-36 lg:pt-40 pb-16 sm:pb-24 overflow-hidden">
+        <div className="max-w-2xl text-left w-full">
           
           {/* Subtitle / Caption Medium with Slide Counter */}
           <div 
             key={`badge-${currentSlide}`}
-            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/60 border border-[#fbbd08]/50 backdrop-blur-sm mb-4 animate-title-slide"
+            className="inline-flex max-w-full items-center gap-2 px-3 py-1.5 rounded-full bg-black/70 border border-[#fbbd08]/50 backdrop-blur-sm mb-3.5 animate-title-slide"
           >
-            <span className="text-[10px] font-black text-slate-950 bg-[#fbbd08] px-1.5 py-0.2 rounded-full">
+            <span className="text-[10px] font-black text-slate-950 bg-[#fbbd08] px-1.5 py-0.5 rounded-full flex-shrink-0">
               0{currentSlide + 1} / 0{slides.length}
             </span>
-            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#fbbd08]">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest text-[#fbbd08] truncate">
               {active.badge}
             </span>
           </div>
@@ -170,7 +170,7 @@ export default function HeroSection({ onOpenQuote }) {
           {/* Caption Big (Changes smoothly with each slide change) */}
           <h1 
             key={`title-${currentSlide}`}
-            className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white leading-[1.1] tracking-tight uppercase mb-4 animate-title-slide"
+            className="text-2xl sm:text-4xl lg:text-[46px] font-black text-white leading-[1.15] tracking-tight uppercase mb-3 sm:mb-4 animate-title-slide break-words"
           >
             {active.titleLine1}<br />
             <span className="text-[#fbbd08]">{active.titleLine2}</span><br />
@@ -180,34 +180,34 @@ export default function HeroSection({ onOpenQuote }) {
           {/* Caption Small */}
           <p 
             key={`sub-${currentSlide}`}
-            className="text-slate-300 text-xs sm:text-sm lg:text-base font-normal max-w-xl leading-relaxed mb-6 sm:mb-8 animate-title-slide"
+            className="text-slate-300 text-xs sm:text-sm lg:text-base font-normal max-w-xl leading-relaxed mb-6 sm:mb-8 animate-title-slide break-words"
           >
             {active.subtitle}
           </p>
 
           {/* Slider Buttons Group (Industrus Slider Buttons) */}
-          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-8 w-full max-w-sm sm:max-w-none">
             
             {/* Primary Action Button (Yellow Industrus Action) */}
             <button
               onClick={() => onOpenQuote(active.quoteItem, active.quoteType)}
               aria-label={`Cotizar ${active.quoteItem}`}
-              className="flex items-center gap-2.5 bg-[#fbbd08] hover:bg-[#eab308] text-slate-950 font-black text-xs uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 touch-press cursor-pointer group"
+              className="flex items-center justify-center gap-2.5 bg-[#fbbd08] hover:bg-[#eab308] text-slate-950 font-black text-xs uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 touch-press cursor-pointer group w-full sm:w-auto"
             >
-              <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-[#fbbd08] group-hover:bg-[#fbbd08] group-hover:text-black transition-colors">
+              <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-[#fbbd08] group-hover:bg-[#fbbd08] group-hover:text-black transition-colors flex-shrink-0">
                 <MessageSquare className="w-3.5 h-3.5 fill-current" />
               </span>
-              <span>{active.btnPrimary}</span>
-              <ArrowRight className="w-4 h-4 stroke-[3]" />
+              <span className="truncate">{active.btnPrimary}</span>
+              <ArrowRight className="w-4 h-4 stroke-[3] flex-shrink-0" />
             </button>
 
             {/* Secondary Button */}
             <button
               onClick={() => scrollToSection(active.target)}
-              className="flex items-center gap-2 bg-black/40 hover:bg-black/70 border border-slate-400/80 text-white font-bold text-xs uppercase tracking-wider px-5 py-3.5 rounded-lg backdrop-blur-sm transition-all duration-200 touch-press cursor-pointer"
+              className="flex items-center justify-center gap-2 bg-black/50 hover:bg-black/80 border border-slate-400/80 text-white font-bold text-xs uppercase tracking-wider px-5 py-3.5 rounded-xl backdrop-blur-sm transition-all duration-200 touch-press cursor-pointer w-full sm:w-auto"
             >
-              <FileText className="w-3.5 h-3.5 text-white" />
-              <span>{active.btnSecondary}</span>
+              <FileText className="w-3.5 h-3.5 text-white flex-shrink-0" />
+              <span className="truncate">{active.btnSecondary}</span>
             </button>
 
           </div>

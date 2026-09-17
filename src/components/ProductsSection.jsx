@@ -16,7 +16,8 @@ import {
   ArrowRight, 
   SearchX, 
   PhoneCall, 
-  RotateCcw 
+  RotateCcw,
+  Building2
 } from 'lucide-react';
 
 const iconMap = {
@@ -25,7 +26,8 @@ const iconMap = {
   Box,
   ShieldCheck,
   Columns,
-  CircleDot
+  CircleDot,
+  Building2
 };
 
 export default function ProductsSection({ onSelectDetail, onSelectQuote }) {
@@ -110,7 +112,7 @@ export default function ProductsSection({ onSelectDetail, onSelectQuote }) {
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Buscar productos (ej. Pastelón, Solerilla, Canaleta, Rejilla)..."
+              placeholder="Buscar productos (ej. Pandereta G35, Apoyo, Cámara, Pastelón, Solerilla)..."
               aria-label="Buscar productos técnicos y prefabricados"
               className="w-full pl-10 sm:pl-12 pr-10 py-3 sm:py-3.5 bg-white border border-slate-200 focus:border-[#b45309] rounded-2xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-3 focus:ring-amber-100 transition-all placeholder:text-slate-400 shadow-xs"
             />
@@ -333,14 +335,14 @@ export default function ProductsSection({ onSelectDetail, onSelectQuote }) {
                         <div className="flex items-baseline justify-between pt-2.5 mt-2.5 border-t border-slate-100">
                           <div>
                             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">
-                              Precio Unitario
+                              {product.priceUnit === 'metro lineal' ? 'Precio por Metro' : 'Precio Unitario'}
                             </span>
                             <div className="flex items-baseline gap-1">
                               <span className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">
                                 {product.price}
                               </span>
                               <span className="text-xs text-slate-500 font-bold">
-                                {product.priceUnit || 'c/u'}
+                                {product.priceUnit === 'metro lineal' ? '/ m lineal' : (product.priceUnit || 'c/u')}
                               </span>
                             </div>
                           </div>

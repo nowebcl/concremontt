@@ -77,10 +77,14 @@ export default function DetailSheet({ item, isOpen, onClose, onQuote }) {
         {item.price && (
           <div className="flex items-baseline justify-between p-3 mb-3.5 rounded-xl bg-slate-50 border border-slate-200">
             <div>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Precio Unitario</span>
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">
+                {item.priceUnit === 'metro lineal' ? 'Precio por Metro' : 'Precio Unitario'}
+              </span>
               <div className="flex items-baseline gap-1">
                 <span className="text-2xl font-black text-slate-950">{item.price}</span>
-                <span className="text-xs text-slate-500 font-bold">{item.priceUnit || 'c/u'}</span>
+                <span className="text-xs text-slate-500 font-bold">
+                  {item.priceUnit === 'metro lineal' ? '/ m lineal' : (item.priceUnit || 'c/u')}
+                </span>
               </div>
             </div>
             <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-100 text-emerald-900 border border-emerald-300">

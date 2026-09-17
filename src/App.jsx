@@ -138,16 +138,26 @@ export default function App() {
         onQuote={(title, type) => handleOpenQuote(title, type)}
       />
 
-      {/* Floating WhatsApp Action Pill for Desktop */}
+      {/* Botón WhatsApp Flotante Redondo - Lado Izquierdo Abajo */}
       <a
-        href={`https://wa.me/${companyData.phoneRaw}?text=${encodeURIComponent('¡Hola, Inversiones Concremontt! Me gustaría hacer una consulta.')}`}
+        href={`https://wa.me/${companyData.phoneRaw}?text=${encodeURIComponent('¡Hola, Inversiones Concremontt! Me gustaría cotizar panderetas y prefabricados de hormigón.')}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Abrir WhatsApp"
-        className="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-2 px-4 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg hover:scale-105 transition-all touch-press"
+        aria-label="Abrir chat de WhatsApp con Inversiones Concremontt"
+        className="fixed bottom-20 md:bottom-6 left-4 sm:left-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/25 group cursor-pointer"
       >
-        <MessageCircle className="w-4 h-4 fill-current" />
-        <span>WhatsApp Directo</span>
+        <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8 fill-white stroke-[#25D366]" />
+
+        {/* Indicador de estado en línea */}
+        <span className="absolute top-1 right-1 flex h-3.5 w-3.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-white"></span>
+        </span>
+
+        {/* Tooltip flotante en hover para desktop */}
+        <span className="hidden md:group-hover:block absolute left-full ml-3 px-3 py-1.5 bg-slate-950 text-white text-xs font-bold rounded-xl whitespace-nowrap shadow-xl pointer-events-none transition-all">
+          WhatsApp Directo
+        </span>
       </a>
 
     </div>

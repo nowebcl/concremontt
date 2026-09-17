@@ -92,8 +92,8 @@ export default function ServicesSection({ onSelectDetail, onSelectQuote }) {
                   {/* Image Banner */}
                   <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
                     <img
-                      src={companyData.media.galponImg}
-                      onError={(e) => { e.currentTarget.src = companyData.media.galponImgFallback; }}
+                      src={service.image || '/991afa4a-daf2-40db-8146-68815b0b439d.jpg'}
+                      onError={(e) => { e.currentTarget.src = '/991afa4a-daf2-40db-8146-68815b0b439d.jpg'; }}
                       alt={`Servicio de ${service.title} en Puerto Montt - CONCREMONTT`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
