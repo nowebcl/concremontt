@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>NOWEBLABS — Informe Técnico & Garantía Concremontt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #18181b;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 8.8pt;
+      letter-spacing: -0.01em;
+    }
+
+    .page {
+      width: 100%;
+      height: 273mm;
+      max-height: 273mm;
+      background: #ffffff;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page-content {
+      flex: 1;
+    }
+
+    /* Minimal Top Header */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e4e4e7;
+      margin-bottom: 16px;
+    }
+
+    .logo-text {
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #09090b;
+    }
+
+    .meta-top {
+      font-size: 7.5pt;
+      color: #71717a;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.35;
+    }
+
+    /* Title Block */
+    .doc-intro {
+      margin-bottom: 16px;
+    }
+
+    .doc-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      font-weight: 600;
+      color: #09090b;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .doc-details-strip {
+      display: flex;
+      gap: 20px;
+      padding-top: 8px;
+      margin-top: 4px;
+      border-top: 1px solid #f4f4f5;
+      font-size: 7.8pt;
+      color: #71717a;
+    }
+
+    .doc-details-strip span strong {
+      color: #18181b;
+      font-weight: 600;
+    }
+
+    /* Headings */
+    h2 {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #09090b;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 10px;
+      background: #18181b;
+      border-radius: 1px;
+    }
+
+    p {
+      color: #3f3f46;
+      margin-bottom: 8px;
+      font-size: 8.5pt;
+      line-height: 1.48;
+    }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Clean Card Box */
+    .box {
+      border: 1px solid #e4e4e7;
+      border-radius: 5px;
+      padding: 8px 10px;
+      background: #ffffff;
+    }
+
+    .box-title {
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #71717a;
+      margin-bottom: 2px;
+    }
+
+    .box-value {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #09090b;
+      letter-spacing: -0.02em;
+    }
+
+    .box-sub {
+      font-size: 7pt;
+      color: #71717a;
+      margin-top: 1px;
+    }
+
+    /* Minimal Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+      font-size: 8pt;
+    }
+
+    th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 1px solid #d4d4d8;
+      color: #52525b;
+      background: transparent;
+    }
+
+    td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #f4f4f5;
+      color: #27272a;
+      vertical-align: top;
+      line-height: 1.4;
+    }
+
+    tr:last-child td {
+      border-bottom: 1px solid #e4e4e7;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5pt;
+      color: #18181b;
+    }
+
+    /* Bullet List */
+    ul {
+      list-style: none;
+      margin-bottom: 8px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3.5px;
+      font-size: 8pt;
+      color: #3f3f46;
+      line-height: 1.4;
+    }
+
+    li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #a1a1aa;
+      font-size: 7.5pt;
+    }
+
+    /* Minimal Guarantee Box */
+    .guarantee-box {
+      border: 1px solid #18181b;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin: 10px 0 12px 0;
+      background: #fafafa;
+    }
+
+    .guarantee-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e4e4e7;
+    }
+
+    .guarantee-title {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #09090b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .guarantee-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 6.5pt;
+      font-weight: 600;
+      background: #18181b;
+      color: #ffffff;
+      padding: 2px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Signatures */
+    .signatures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid #e4e4e7;
+    }
+
+    .sig-col strong {
+      font-size: 8.5pt;
+      color: #09090b;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .sig-col span {
+      font-size: 7pt;
+      color: #71717a;
+      display: block;
+      line-height: 1.35;
+    }
+
+    /* Bottom Page Strip */
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: #a1a1aa;
+      border-top: 1px solid #f4f4f5;
+      padding-top: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PÁGINA 1 ==================== -->
+  <div class="page">
+    <div class="page-content">
+      
+      <div class="top-header">
+        <div class="logo-text">NOWEBLABS</div>
+        <div class="meta-top">REF: NWL-CONCREMONTT-2026<br />FECHA: 17.09.2026 · CHILE</div>
+      </div>
+
+      <div class="doc-intro">
+        <div class="doc-tag">Informe Técnico de Software & Certificado de Entrega</div>
+        <h1>Arquitectura Web & Estrategia SEO Local Google</h1>
+        <div class="doc-details-strip">
+          <span>Cliente: <strong>Inversiones Concremontt SpA</strong></span>
+          <span>Dominio: <strong>concremontt.cl</strong></span>
+          <span>Garantía: <strong>30 Días (1 Mes)</strong></span>
+          <span>Estado: <strong>Producción</strong></span>
+        </div>
+      </div>
+
+      <h2>1. Resumen Ejecutivo del Software</h2>
+      <p>
+        Noweblabs ha diseñado, desarrollado y puesto en producción la plataforma web oficial para <strong>Inversiones Concremontt SpA</strong>. El sistema combina una arquitectura de carga instantánea con una estrategia integral de <strong>SEO Local Transaccional</strong>, orientada a dominar los términos de mayor rentabilidad en Google para Puerto Montt, Puerto Varas y la Región de Los Lagos.
+      </p>
+
+      <div class="grid-3">
+        <div class="box">
+          <div class="box-title">Frontend Stack</div>
+          <div class="box-value">React 18 + Vite</div>
+          <div class="box-sub">Tailwind CSS · SPA Modular</div>
+        </div>
+        <div class="box">
+          <div class="box-title">Peso Comprimido</div>
+          <div class="box-value">75.8 kB gzip</div>
+          <div class="box-sub">Primer render &lt; 0.9s</div>
+        </div>
+        <div class="box">
+          <div class="box-title">Canal Comercial</div>
+          <div class="box-value">WhatsApp Direct</div>
+          <div class="box-sub">+56 9 3713 8495</div>
+        </div>
+      </div>
+
+      <h2>2. Componentes & Módulos Desarrollados</h2>
+      <ul>
+        <li><strong>Hero Dinámico Multi-Video Continuo:</strong> Rotación fluida de 3 videos de alta definición (<code>hero.mp4</code>, <code>hero2.mp4</code>, <code>hero3.mp4</code>), contador numérico de slide, transición sincronizada de títulos y barra de progreso continua de 4.5 segundos sin interrupciones.</li>
+        <li><strong>Catálogo Oficial de Prefabricados con Buscador & Filtros:</strong> Motor de búsqueda instantáneo en cliente y filtros por categoría (Pastelones, Solerillas, Canaletas) con precio unitario visible y botón directo de compra:</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Producto Oficial</th>
+            <th>Formato / Medidas</th>
+            <th>Precio Unitario</th>
+            <th>Acción Comercial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pastelón de Hormigón</strong></td>
+            <td>50 × 50 × 4 cm (Hormigón H25 vibrado)</td>
+            <td><strong>$4.450 c/u</strong></td>
+            <td><span class="mono">Pedir por WhatsApp</span></td>
+          </tr>
+          <tr>
+            <td><strong>Solerilla de Hormigón</strong></td>
+            <td>100 × 20 × 6 cm (Canto biselado de 1 metro)</td>
+            <td><strong>$3.350 c/u</strong></td>
+            <td><span class="mono">Pedir por WhatsApp</span></td>
+          </tr>
+          <tr>
+            <td><strong>Canaleta a Piso de Hormigón</strong></td>
+            <td>1 m × 15 × 15 cm (+ Rejilla Galvanizada incluida)</td>
+            <td><strong>$13.990 c/u</strong></td>
+            <td><span class="mono">Pedir por WhatsApp</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li><strong>Galería Dinámica de Trabajos Terminados:</strong> Registro fotográfico de obras reales en terreno (Cardonal, Puerto Varas y Alerce) con sistema Lightbox a pantalla completa, fondo difuminado y navegación interactiva por teclado (<span class="mono">Esc</span>, <span class="mono">←</span>, <span class="mono">→</span>).</li>
+        <li><strong>Selector Técnico de Resistencias (H20 / H25 / H30):</strong> Pestañas interactivas con especificación de cono, resistencia cilíndrica y botón de cubicación directa hacia WhatsApp.</li>
+        <li><strong>Módulos de Especialidad:</strong> Secciones dedicadas para Soluciones Fotovoltaicas (On-Grid / Off-Grid para parcelas) e Inspección Técnica de Obras Civiles (ITO).</li>
+      </ul>
+
+      <h2>3. Control de Versiones & Respaldo Git</h2>
+      <div class="box">
+        <p style="margin: 0; font-size: 8pt;">
+          El código fuente está versionado y respaldado en la nube en GitHub: 
+          <span class="mono">https://github.com/nowebcl/concremontt</span> (Rama principal: <span class="mono">main</span>, Estado: Sincronizado).
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      <span>NOWEBLABS — SOFTWARE ENGINEERING</span>
+      <span>PÁGINA 1 DE 2</span>
+    </div>
+  </div>
+
+  <!-- ==================== PÁGINA 2 ==================== -->
+  <div class="page">
+    <div class="page-content">
+      
+      <div class="top-header">
+        <div class="logo-text">NOWEBLABS</div>
+        <div class="meta-top">REF: NWL-CONCREMONTT-2026<br />SEO & PÓLIZA DE GARANTÍA</div>
+      </div>
+
+      <h2>4. Estrategia Google SEO Local & Metadatos</h2>
+      <p>
+        Bajo la restricción de <strong>máximo 3 líneas por párrafo en desktop</strong>, el sitio optimiza la densidad semántica y la experiencia de usuario sin recurrir a bloques masivos de texto, maximizando el rastreo y la indexación en Google:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cluster Semántico</th>
+            <th>Palabras Clave Indexadas</th>
+            <th>Intención de Búsqueda</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Transaccional</strong></td>
+            <td>hormigón preparado puerto montt, venta de hormigón puerto montt, camión mixer puerto montt, precio m3 hormigón puerto montt</td>
+            <td>Compra directa y despacho mixer a obra</td>
+          </tr>
+          <tr>
+            <td><strong>Cobertura Geográfica</strong></td>
+            <td>hormigón puerto varas, camión mixer llanquihue, radier hormigón alerce, hormigón frutillar, región de los lagos</td>
+            <td>Vaciado en parcelaciones y faenas rurales</td>
+          </tr>
+          <tr>
+            <td><strong>Especificación Técnica</strong></td>
+            <td>bombeo de hormigón puerto montt, hormigón H20, hormigón H25, hormigón H30 norma NCh170, bomba pluma</td>
+            <td>Cálculo estructural, radieres y losas</td>
+          </tr>
+          <tr>
+            <td><strong>Prefabricados</strong></td>
+            <td>pastelón de hormigón 50x50, solerilla con bisel, canaleta a piso de hormigón con rejilla galvanizada</td>
+            <td>Venta inmediata con precio en bodega</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grid-2">
+        <div class="box">
+          <div class="box-title">Metadatos & DOM On-Page</div>
+          <ul style="margin: 0; padding-left: 9px;">
+            <li><strong>Title (58 car):</strong> Hormigón Preparado en Puerto Montt | Venta y Camión Mixer | CONCREMONTT</li>
+            <li><strong>Description (155 car):</strong> Venta de hormigón preparado en Puerto Montt, Puerto Varas y Llanquihue. Despacho en camión mixer, bombeo H20, H25, H30.</li>
+            <li><strong>Canonical:</strong> <span class="mono">https://concremontt.cl/</span></li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <div class="box-title">Datos Estructurados Schema.org & Social</div>
+          <ul style="margin: 0; padding-left: 9px;">
+            <li><strong>Entidades:</strong> LocalBusiness y HomeAndConstructionBusiness.</li>
+            <li><strong>Geoespacial:</strong> Puerto Montt (-41.4693, -72.9424). Moneda: CLP.</li>
+            <li><strong>FAQPage:</strong> Rich Snippets de 3 preguntas frecuentes técnicas.</li>
+            <li><strong>Open Graph:</strong> <span class="mono">public/social.jpg</span> oficial (1254 × 1254 px).</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>5. Póliza Oficial de Garantía Técnica (1 Mes / 30 Días)</h2>
+      <div class="guarantee-box">
+        <div class="guarantee-header">
+          <div class="guarantee-title">Garantía de Soporte & Ajustes Sin Costo Adicional</div>
+          <div class="guarantee-badge">30 DÍAS ACTIVOS</div>
+        </div>
+        <p style="margin-bottom: 6px; font-size: 8pt;">
+          Noweblabs otorga a <strong>Inversiones Concremontt SpA</strong> una póliza de garantía técnica de <strong>1 mes corrido (del 17 de Septiembre al 17 de Octubre de 2026)</strong> con soporte prioritario:
+        </p>
+        <div class="grid-2" style="margin-bottom: 0;">
+          <div>
+            <ul style="margin: 0; padding-left: 9px;">
+              <li><strong>Ajustes de Precios y Catálogo:</strong> Modificación de precios o medidas de los productos prefabricados.</li>
+              <li><strong>Modificación de Micro-Copy:</strong> Actualización de teléfonos, direcciones, correos o textos descriptivos.</li>
+              <li><strong>Afinamiento de Mensajería:</strong> Calibración de textos precargados para WhatsApp y formularios.</li>
+              <li><strong>Soporte y Bugs:</strong> Resolución inmediata ante cualquier eventualidad técnica o error en navegadores.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="background: #ffffff; border: 1px solid #e4e4e7; border-radius: 4px; padding: 6px 8px; font-size: 7.5pt; line-height: 1.45;">
+              <strong>Tiempos de Respuesta (SLA):</strong><br />
+              • Incidencias de funcionamiento: &lt; <strong>12 horas</strong>.<br />
+              • Cambios de texto o catálogo: <strong>24 a 48 horas hábiles</strong>.<br />
+              • Canal oficial: <span class="mono">nowebcl@gmail.com</span> / WhatsApp Directo Noweblabs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>6. Cierre & Firmas de Conformidad</h2>
+      <div class="signatures">
+        <div class="sig-col">
+          <strong>NOWEBLABS</strong>
+          <span>Ingeniería de Software & SEO Técnico<br />nowebcl@gmail.com · noweb.cl</span>
+        </div>
+        <div class="sig-col">
+          <strong>INVERSIONES CONCREMONTT SpA</strong>
+          <span>Recepción Conforme de Plataforma Web<br />concremontt.cl · Puerto Montt, Chile</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      <span>NOWEBLABS — SOFTWARE ENGINEERING</span>
+      <span>PÁGINA 2 DE 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
