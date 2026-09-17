@@ -18,7 +18,7 @@ export default function Header({ onOpenQuote }) {
     { label: 'Inicio', href: '#inicio' },
     { label: 'Catálogo', href: '#productos' },
     { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Hormigón & Servicios', href: '#servicios' },
+    { label: 'Panderetas & Cierres', href: '#servicios' },
     { label: 'Cobertura', href: '#cobertura' },
     { label: 'Trabajos', href: '#trabajos' },
     { label: 'Preguntas', href: '#faq' },
@@ -49,6 +49,7 @@ export default function Header({ onOpenQuote }) {
           <a 
             href="#inicio" 
             onClick={(e) => handleNavClick(e, '#inicio')}
+            aria-label="Ir al inicio de Inversiones Concremontt"
             className="flex items-center gap-2 transition-opacity hover:opacity-90"
           >
             <img 
@@ -56,6 +57,8 @@ export default function Header({ onOpenQuote }) {
               onError={(e) => { e.currentTarget.src = companyData.media.logoFallback; }}
               alt="Inversiones Concremontt Construcción e Ingeniería" 
               className="h-10 sm:h-11 md:h-12 lg:h-14 w-auto object-contain transition-all duration-200"
+              width="180"
+              height="56"
             />
           </a>
 
@@ -117,10 +120,16 @@ export default function Header({ onOpenQuote }) {
               <img 
                 src={companyData.media.logo} 
                 onError={(e) => { e.currentTarget.src = companyData.media.logoFallback; }}
-                alt="Logo" 
+                alt="Inversiones Concremontt Logo" 
                 className="h-9 w-auto" 
+                width="140"
+                height="36"
               />
-              <button onClick={() => setMobileMenuOpen(false)} className="text-slate-400 p-1">
+              <button 
+                onClick={() => setMobileMenuOpen(false)} 
+                aria-label="Cerrar menú de navegación"
+                className="text-slate-400 hover:text-white p-2 cursor-pointer"
+              >
                 <X className="w-5 h-5" />
               </button>
             </div>

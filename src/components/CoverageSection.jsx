@@ -9,7 +9,7 @@ export default function CoverageSection({ onSelectQuote }) {
 
   const getWhatsAppCoverageLink = (area) => {
     const phone = companyData.phoneRaw;
-    const msg = `¡Hola Inversiones Concremontt! Quisiera cotizar despacho de camión mixer a la comuna de *${area.name}* (${area.distance} aprox). ¿Tienen disponibilidad en la fecha?`;
+    const msg = `¡Hola Inversiones Concremontt! Quisiera cotizar instalación de panderetas y despacho de prefabricados en la comuna de *${area.name}* (${area.distance} aprox). ¿Tienen disponibilidad de cuadrilla?`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -25,12 +25,12 @@ export default function CoverageSection({ onSelectQuote }) {
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 leading-tight tracking-tight">
-            Cobertura Geográfica y Despacho Mixer en la <br className="hidden sm:inline" />
+            Instalación de Panderetas y Despacho en la <br className="hidden sm:inline" />
             <span className="text-[#d97706]">Región de Los Lagos</span>
           </h2>
 
           <p className="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            Suministro de hormigón preparado en camiones mixer de 8 m³ y bomba pluma con tiempos de entrega coordinados desde nuestra base en Puerto Montt.
+            Cuadrillas de montaje de panderetas de hormigón y despacho de elementos prefabricados con cobertura directa en Puerto Montt, Puerto Varas, Llanquihue, Alerce y Frutillar.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function CoverageSection({ onSelectQuote }) {
                 {selectedArea.description}
               </p>
               <div className="pt-2">
-                <span className="text-[11px] font-bold text-slate-500">Volumen de entrega:</span>
+                <span className="text-[11px] font-bold text-slate-500">Capacidad de Obra:</span>
                 <div className="text-xs font-black text-slate-900">{selectedArea.minVolume}</div>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function CoverageSection({ onSelectQuote }) {
                   <span>Tiempo en Ruta</span>
                 </div>
                 <div className="text-base font-black text-slate-900">{selectedArea.transitTime}</div>
-                <div className="text-[10px] text-slate-500">Desde planta en Puerto Montt</div>
+                <div className="text-[10px] text-slate-500">Desde fábrica en Puerto Montt</div>
               </div>
 
               <div className="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs space-y-1">
@@ -98,16 +98,16 @@ export default function CoverageSection({ onSelectQuote }) {
                   <span>Vía de Acceso</span>
                 </div>
                 <div className="text-xs font-black text-slate-900 truncate">{selectedArea.route}</div>
-                <div className="text-[10px] text-slate-500">Apta camión tolva / mixer</div>
+                <div className="text-[10px] text-slate-500">Apta camión y cuadrilla</div>
               </div>
 
               <div className="bg-white p-3.5 rounded-xl border border-slate-200/80 shadow-2xs space-y-1 col-span-2">
                 <div className="flex items-center gap-1.5 text-slate-500 text-[10px] font-bold uppercase tracking-wider">
-                  <Truck className="w-3.5 h-3.5 text-[#d97706]" />
-                  <span>Disponibilidad de Bomba Pluma</span>
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#d97706]" />
+                  <span>Cuadrilla Especializada en Terreno</span>
                 </div>
                 <div className="text-xs font-black text-slate-900">
-                  Servicio disponible para radieres y parcelaciones
+                  Instalación de panderetas, fundaciones y nivelación en parcelas
                 </div>
               </div>
             </div>
@@ -121,11 +121,11 @@ export default function CoverageSection({ onSelectQuote }) {
                 className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs py-3.5 px-4 rounded-xl shadow-xs transition-all touch-press cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 fill-white stroke-[#25D366]" />
-                <span>Despacho a {selectedArea.name}</span>
+                <span>Instalación en {selectedArea.name}</span>
               </a>
 
               <button
-                onClick={() => onSelectQuote(`Despacho Mixer a ${selectedArea.name}`, 'Transporte')}
+                onClick={() => onSelectQuote(`Panderetas en ${selectedArea.name}`, 'Panderetas')}
                 className="inline-flex items-center justify-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-950 transition-colors cursor-pointer py-1"
               >
                 <span>Cotizar por Formulario</span>

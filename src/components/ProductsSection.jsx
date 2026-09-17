@@ -104,18 +104,20 @@ export default function ProductsSection({ onSelectDetail, onSelectQuote }) {
         {/* Prominent Search Bar (Ice Austral Search Input) */}
         <div className="max-w-2xl mx-auto w-full">
           <div className="relative shadow-xs rounded-2xl">
-            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-[#d97706] absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-[#b45309] absolute left-3.5 sm:left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
+              id="product-search-input"
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Buscar productos (ej. Pastelón, Solerilla, Canaleta, Rejilla)..."
-              className="w-full pl-10 sm:pl-12 pr-10 py-3 sm:py-3.5 bg-white border border-slate-200 focus:border-[#d97706] rounded-2xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-3 focus:ring-amber-100 transition-all placeholder:text-slate-400 shadow-xs"
+              aria-label="Buscar productos técnicos y prefabricados"
+              className="w-full pl-10 sm:pl-12 pr-10 py-3 sm:py-3.5 bg-white border border-slate-200 focus:border-[#b45309] rounded-2xl text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-3 focus:ring-amber-100 transition-all placeholder:text-slate-400 shadow-xs"
             />
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
-                aria-label="Limpiar búsqueda"
+                aria-label="Limpiar búsqueda de productos"
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <X className="w-4 h-4" />

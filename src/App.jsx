@@ -89,7 +89,7 @@ export default function App() {
         {/* 4. Industrus Key Facts & Counters Strip */}
         <CounterStrip />
 
-        {/* 5. Geographic Coverage & Mixer Logistics in Los Lagos Region */}
+        {/* 5. Geographic Coverage & Panderetas Installation in Los Lagos Region */}
         <CoverageSection 
           onSelectQuote={(title, type) => handleOpenQuote(title, type)} 
         />

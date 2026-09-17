@@ -36,10 +36,10 @@ export default function Footer() {
               Servicios
             </h4>
             <ul className="space-y-2 text-xs">
+              <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Panderetas de Hormigón</a></li>
+              <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Cierres Perimetrales de Parcela</a></li>
+              <li><a href="#productos" className="hover:text-[#fbbd08] transition-colors">Prefabricados de Hormigón</a></li>
               <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Galpones Modulares</a></li>
-              <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Estructuras Metálicas</a></li>
-              <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Radieres y Fundaciones H20-H30</a></li>
-              <li><a href="#servicios" className="hover:text-[#fbbd08] transition-colors">Cubiertas Industriales PVC & Zinc</a></li>
               <li><a href="#solar" className="hover:text-[#fbbd08] transition-colors">Sistemas Solares para Parcelas</a></li>
             </ul>
           </div>

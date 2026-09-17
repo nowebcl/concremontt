@@ -4,7 +4,7 @@ import { ChevronDown, HelpCircle, MessageCircle, ArrowRight } from 'lucide-react
 
 export default function FaqSection({ onSelectQuote }) {
   // Default open the first question
-  const [openFaqId, setOpenFaqId] = useState('faq-precio-m3');
+  const [openFaqId, setOpenFaqId] = useState('faq-panderetas-precio');
 
   const toggleFaq = (id) => {
     setOpenFaqId(prev => (prev === id ? null : id));
@@ -28,12 +28,12 @@ export default function FaqSection({ onSelectQuote }) {
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 leading-tight tracking-tight">
-            Preguntas Frecuentes sobre Hormigón en <br className="hidden sm:inline" />
+            Preguntas Frecuentes sobre Panderetas en <br className="hidden sm:inline" />
             <span className="text-[#d97706]">Puerto Montt y Los Lagos</span>
           </h2>
 
           <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Información técnica sobre precios por m³, dosificación de resistencias y logística de camión mixer en obra.
+            Información técnica sobre fabricación, instalación de panderetas de hormigón en parcelas y venta de prefabricados.
           </p>
         </div>
 

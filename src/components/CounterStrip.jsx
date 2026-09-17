@@ -5,7 +5,7 @@ export default function CounterStrip() {
     { value: '150+', label: 'Proyectos Ejecutados', sub: 'Sur de Chile' },
     { value: '100%', label: 'Cumplimiento de Plazos', sub: 'Garantizado' },
     { value: '140+', label: 'Km/h Resistencia Viento', sub: 'Cálculo NCh' },
-    { value: 'H25-H30', label: 'Hormigones Certificados', sub: 'Laboratorio' }
+    { value: 'H25', label: 'Hormigón Vibrado', sub: 'Mallas de Acero' }
   ];
 
   return (

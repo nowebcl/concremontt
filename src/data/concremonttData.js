@@ -1,8 +1,8 @@
 export const companyData = {
   name: "INVERSIONES CONCREMONTT SPA",
   shortName: "CONCREMONTT",
-  slogan: "SOLUCIONES QUE IMPULSAN TU PROYECTO",
-  tagline: "Ingeniería, galpones modulares y obras civiles diseñadas con precisión técnica para resistir las condiciones climáticas de la zona sur austral de Chile.",
+  slogan: "PANDERETAS DE HORMIGÓN & PREFABRICADOS EN PUERTO MONTT",
+  tagline: "Fabricación e instalación de panderetas de hormigón, cierres perimetrales y elementos prefabricados con resistencia técnica para la Región de Los Lagos.",
   location: "Italia 1984, Puerto Montt, Chile",
   hours: "Lunes a Viernes: 08:00 a 18:00 hrs",
   phoneDisplay: "+56 9 3713 8495",
@@ -36,94 +36,79 @@ export const companyData = {
   },
   services: [
     {
-      id: "hormigon-preparado-premezclado",
-      title: "Venta de Hormigón Preparado",
-      category: "hormigon",
-      categoryLabel: "Hormigón Premezclado",
-      summary: "Dosificación en planta de hormigón preparado certificado bajo norma NCh170 para radieres, fundaciones, muros y pavimentos.",
-      description: "Hormigón premezclado de alta trabajabilidad con control riguroso de cono de Abrams, áridos lavados y aditivos de fraguado adaptados al clima húmedo de Puerto Montt.",
+      id: "panderetas-hormigon-puerto-montt",
+      title: "Panderetas de Hormigón en Puerto Montt",
+      category: "panderetas",
+      categoryLabel: "Panderetas & Cierres",
+      summary: "Fabricación e instalación de panderetas reforzadas con placas vibradas y postes ranurados de alta densidad para parcelas y terrenos.",
+      description: "Nuestras panderetas de hormigón están fabricadas con hormigón H25 vibrado y malla electrosoldada de acero de alta tracción, calculadas para resistir los vientos y la humedad del sur.",
       specs: [
-        "Resistencias certificadas: H20 (20 MPa), H25 (25 MPa) y H30 (30 MPa)",
-        "Dosificación computarizada en planta de alta precisión volumétrica",
-        "Aditivos hidrófugos e impermeabilizantes para la zona sur",
-        "Control de asentamiento (slump) y resistencia garantizada a 28 días"
+        "Hormigón H25 vibrado de alta compactación y baja absorción",
+        "Malla electro-soldada interior de acero en cada placa",
+        "Postes ranurados de 12×12 cm y 14×14 cm con fundación sólida",
+        "Alturas estándar de 1.80m, 2.00m y 2.50m libres"
       ],
-      badge: "H20 · H25 · H30"
+      badge: "Pandereta Reforzada"
     },
     {
-      id: "camion-mixer-despacho",
-      title: "Despacho en Camión Mixer",
-      category: "hormigon",
-      categoryLabel: "Transporte Mixer",
-      summary: "Flota moderna de camiones mixer de 8 m³ para entrega puntual y controlada de hormigón fresco directamente en su faena.",
-      description: "Transporte en tambores mezcladores con agitación continua para evitar la segregación de áridos. Despacho coordinado por bloques horarios en Puerto Montt, Puerto Varas y comunas cercanas.",
+      id: "cierres-perimetrales-terreno",
+      title: "Cierres Perimetrales en Terreno",
+      category: "panderetas",
+      categoryLabel: "Instalación en Obra",
+      summary: "Montaje rápido y profesional de cierres perimetrales continuos, adaptados a pendientes, deslindes y accesos en parcelaciones.",
+      description: "Servicio de instalación integral con excavación de hoyos, nivelación láser, aplomado de postes con hormigón y ensamble de placas sin junturas abiertas.",
       specs: [
-        "Capacidad de carga: hasta 8 metros cúbicos (m³) por camión",
-        "Canaletas extensibles de descarga directa hasta 4 metros",
-        "Geolocalización en ruta y entrega programada para evitar fraguado prematuro",
-        "Disponibilidad de pedidos por m³ parcial o volumen continuo"
+        "Instalación ejecutada por cuadrillas especializadas en terreno",
+        "Adaptación precisa a desniveles y quiebres de deslinde",
+        "Fundación aislada de 60 cm en cada poste para máxima estabilidad",
+        "Coordinación de portones vehiculares y peatonales a juego"
       ],
-      badge: "Mixer 8 m³"
+      badge: "Instalación Llave en Mano"
     },
     {
-      id: "bombeo-hormigon-obra",
-      title: "Bombeo de Hormigón en Obra",
-      category: "hormigon",
-      categoryLabel: "Bombeo Técnico",
-      summary: "Servicio de bomba pluma y bomba estacionaria para vaciado rápido y uniforme de hormigón en radieres y losas de difícil acceso.",
-      description: "Solución técnica para faenas donde el camión mixer no puede posicionarse al borde de la obra. Distribución continua de hormigón que optimiza tiempos de fraguado y reduce cuadrilla.",
+      id: "prefabricados-hormigon-puerto-montt",
+      title: "Prefabricados de Hormigón en Puerto Montt",
+      category: "prefabricados",
+      categoryLabel: "Prefabricados",
+      summary: "Venta directa de pastelones antideslizantes 50x50, solerillas biseladas y canaletas a piso con rejilla galvanizada.",
+      description: "Elementos prefabricados de hormigón vibrado para urbanización de parcelas, accesos vehiculares, veredas y conducción de aguas lluvias en el sur.",
       specs: [
-        "Pluma hidráulica articulada con alcance horizontal y vertical",
-        "Línea de tuberías modulares para parcelas y terrenos en pendiente",
-        "Caudal continuo que evita juntas frías en radieres de gran superficie",
-        "Operadores certificados con estricto protocolo de seguridad"
+        "Pastelones de hormigón 50×50×4 cm antideslizantes ($4.450 c/u)",
+        "Solerillas de confinamiento biseladas 100×20×6 cm ($3.350 c/u)",
+        "Canaletas a piso 1 metro con rejilla metálica galvanizada ($13.990 c/u)",
+        "Stock permanente para retiro en planta o despacho a terreno"
       ],
-      badge: "Bomba Pluma"
+      badge: "Precios de Fábrica"
     },
     {
-      id: "radieres-fundaciones",
-      title: "Hormigón para Radieres y Pisos",
-      category: "hormigon",
-      categoryLabel: "Radieres y Pisos",
-      summary: "Vaciado de hormigón H20/H25, nivelación óptica y afinado mecánico con helicóptero para pisos lisos de alto tránsito.",
-      description: "Ejecución técnica integral de radieres con sub-base compactada, barrera de humedad de polietileno, mallas de refuerzo y endurecedores de cuarzo para soportar tránsito pesado.",
+      id: "bardas-hidraulicas",
+      title: "Bardas y Caballetes Hidráulicos",
+      category: "prefabricados",
+      categoryLabel: "Protección Hidráulica",
+      summary: "Caballetes de hormigón a dos aguas con lagrimal corta-gotera para coronación y sellado de panderetas y muros.",
+      description: "Elemento de remate superior que impide filtraciones de agua de lluvia y evita la formación prematura de musgo, duplicando la vida útil del cerco.",
       specs: [
-        "Hormigón H20 y H25 con fibras estructurales y aditivo impermeabilizante",
-        "Acabado pulido o afinado mecánico con helicóptero para cero polvo",
-        "Corte técnico de juntas de retracción y aplicación de membrana de curado",
-        "Espesores desde 10 cm habitacional hasta 20 cm industrial"
+        "Geometría a dos aguas con lagrimal bota-aguas inferior",
+        "Módulo de 2.00 metros de largo para ensamble continuo",
+        "Hormigón impermeable con aditivo hidrófugo integrado",
+        "Acabado liso listo para pintar o dejar a la vista"
       ],
-      badge: "Alisado Mecánico"
+      badge: "Sellado Corta-Gotera"
     },
     {
       id: "galpones-modulares",
       title: "Galpones Modulares Industriales",
       category: "estructuras",
       categoryLabel: "Estructuras",
-      summary: "Diseño, maestranza y montaje rápido de galpones industriales en acero pesado, calculados para vientos y nieve del sur.",
-      description: "Nuestros galpones modulares están concebidos para ejecutarse en tiempos récord sin sacrificar resistencia. Calculados específicamente para resistir las inclemencias del clima patagónico.",
+      summary: "Diseño, maestranza y montaje rápido de galpones en acero pesado para bodegas y talleres en parcelas.",
+      description: "Estructuras modulares galvanizadas calculadas para resistir vientos de 140+ km/h y cargas de nieve en la zona sur austral.",
       specs: [
         "Montaje rápido y estructura modular ampliable",
         "Estructura en perfiles de acero pesado galvanizado",
-        "Cálculo adaptado a vientos de 140+ km/h y carga de nieve",
-        "Opción de aislamiento térmico panel sándwich o lana mineral"
+        "Cálculo adaptado a vientos del sur de Chile",
+        "Complemento ideal para terrenos con cierres perimetrales"
       ],
       badge: "Montaje Rápido"
-    },
-    {
-      id: "panderetas-hormigon",
-      title: "Panderetas y Cierres Perimetrales",
-      category: "obras",
-      categoryLabel: "Cierres",
-      summary: "Fabricación propia e instalación de cercos prefabricados con placas y postes de hormigón vibrado de alta resistencia.",
-      description: "Cercos perimetrales con postes reforzados y placas de hormigón H25 de alta densidad. Ideales para parcelaciones, industrias, bodegas y colegios en la zona sur.",
-      specs: [
-        "Hormigón H25 vibrado de alta compactación y baja absorción",
-        "Malla electro-soldada interior de acero de alta tracción",
-        "Postes para empotrar con fundación de hormigón",
-        "Alturas estándar de 1.80m, 2.00m y 2.50m libres"
-      ],
-      badge: "Fabricación Propia"
     }
   ],
   engineering: {
@@ -271,49 +256,52 @@ export function generateWhatsAppUrl({ name, type, item, details }) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
-// Especificaciones técnicas de resistencias de hormigón para SEO y selector UI
-export const concreteResistances = [
+// Modelos y especificaciones de panderetas de hormigón para selector técnico y cotización
+export const panderetaTypes = [
   {
-    grade: "H20",
-    name: "Hormigón H20",
-    strength: "20 MPa (200 kgf/cm²)",
-    slump: "8 - 10 cm",
-    application: "Radieres habitacionales, veredas y soleras peatonales.",
-    badge: "Uso Residencial",
-    icon: "Home"
+    code: "P200",
+    name: "Pandereta Estándar 2.00m",
+    height: "2.00 metros libres",
+    plates: "4 placas vibradas H25 (50 cm c/u)",
+    posts: "Postes ranurados de 12×12 cm",
+    application: "Cierres perimetrales para parcelas residenciales, sitios y deslindes.",
+    badge: "Más Solicitada",
+    icon: "ShieldCheck"
   },
   {
-    grade: "H25",
-    name: "Hormigón H25",
-    strength: "25 MPa (250 kgf/cm²)",
-    slump: "10 - 12 cm",
-    application: "Galpones, accesos vehiculares, estacionamientos y fundaciones.",
-    badge: "Más Solicitado",
-    icon: "Truck"
+    code: "P250",
+    name: "Pandereta Alta 2.50m",
+    height: "2.50 metros libres",
+    plates: "5 placas vibradas H25 (50 cm c/u)",
+    posts: "Postes reforzados de 14×14 cm",
+    application: "Máxima privacidad y seguridad para galpones, bodegas, talleres y condominios.",
+    badge: "Mayor Seguridad",
+    icon: "Building2"
   },
   {
-    grade: "H30",
-    name: "Hormigón H30",
-    strength: "30 MPa (300 kgf/cm²)",
-    slump: "10 - 14 cm",
-    application: "Losas de alto tonelaje, pavimentos pesados y ambiente marino.",
-    badge: "Alto Tránsito",
-    icon: "ShieldAlert"
+    code: "P-BARDA",
+    name: "Con Barda Hidráulica",
+    height: "2.10m / 2.60m total",
+    plates: "Placas H25 + Caballete bota-aguas",
+    posts: "Postes ranurados con remate",
+    application: "Protección contra lluvia austral, previene musgo y escurrimiento.",
+    badge: "Sellado Corta-Gotera",
+    icon: "Sparkles"
   }
 ];
 
-// Áreas de cobertura geográfica y logística de mixer en la Región de Los Lagos
+// Áreas de cobertura geográfica para instalación de panderetas y flete de prefabricados
 export const coverageAreas = [
   {
     id: "puerto-montt",
     name: "Puerto Montt",
-    type: "Planta Base",
+    type: "Fábrica Base",
     distance: "0 - 25 km",
     transitTime: "20 - 35 min",
     route: "Ruta 5 / Cardonal / Chinquihue",
-    badge: "Despacho Inmediato",
-    description: "Suministro directo desde planta para obras urbanas e industriales.",
-    minVolume: "Desde 1 m³ (Mixer 8 m³)"
+    badge: "Instalación Inmediata",
+    description: "Fabricación directa y cuadrilla especializada para instalación en parcelas urbanas y rurales.",
+    minVolume: "Desde 20 metros lineales"
   },
   {
     id: "puerto-varas",
@@ -322,9 +310,9 @@ export const coverageAreas = [
     distance: "22 km",
     transitTime: "30 - 45 min",
     route: "Ruta 5 Sur / Enlace Norte",
-    badge: "Entrega Diaria",
-    description: "Despacho a parcelaciones, condominios y proyectos inmobiliarios.",
-    minVolume: "Mixer completo o parcial"
+    badge: "Atención Semanal",
+    description: "Cierres de parcelaciones, condominios residenciales y predios en entorno campestre.",
+    minVolume: "Montaje llave en mano o venta de placas"
   },
   {
     id: "alerce",
@@ -334,8 +322,8 @@ export const coverageAreas = [
     transitTime: "25 - 35 min",
     route: "Ruta V-505 Alerce",
     badge: "Alta Disponibilidad",
-    description: "Atención rápida a obras civiles, radieres y autoconstrucción.",
-    minVolume: "Programación flexible"
+    description: "Instalación ágil de panderetas y suministro de prefabricados en sectores residenciales.",
+    minVolume: "Programación rápida"
   },
   {
     id: "llanquihue",
@@ -344,9 +332,9 @@ export const coverageAreas = [
     distance: "32 km",
     transitTime: "40 - 55 min",
     route: "Ruta 5 Sur",
-    badge: "Cobertura Total",
-    description: "Abastecimiento de hormigón para faenas agrícolas e industriales.",
-    minVolume: "Coordinación previa"
+    badge: "Cobertura Completa",
+    description: "Cierres perimetrales para predios agrícolas, industriales y parcelas de agrado.",
+    minVolume: "Coordinación previa de cuadrilla"
   },
   {
     id: "frutillar",
@@ -356,36 +344,36 @@ export const coverageAreas = [
     transitTime: "55 - 70 min",
     route: "Ruta 5 Sur / Frutillar Bajo-Alto",
     badge: "Rutas Programadas",
-    description: "Despacho con aditivos retardadores para garantizar cono en obra.",
+    description: "Despacho de elementos prefabricados e instalación técnica en parcelaciones.",
     minVolume: "Planificación semanal"
   }
 ];
 
-// Preguntas frecuentes semánticas vinculadas al Schema FAQPage
+// Preguntas frecuentes semánticas vinculadas a panderetas y prefabricados
 export const seoFaqs = [
   {
-    id: "faq-precio-m3",
-    question: "¿Cuál es el precio del m³ de hormigón preparado en Puerto Montt y cómo cotizar?",
-    shortAnswer: "El valor del m³ depende de la resistencia (H20, H25, H30), el volumen cubicado y la distancia de flete en camión mixer.",
-    details: "En CONCREMONTT entregamos cotización técnica inmediata por WhatsApp con desglose transparente de m³, bombeo pluma y horario de entrega programada.",
-    cta: "Cotizar Precio m³ por WhatsApp",
-    badge: "Cotización Rápida"
+    id: "faq-panderetas-precio",
+    question: "¿Cuánto cuesta la instalación de panderetas de hormigón en Puerto Montt y cómo cotizar?",
+    shortAnswer: "El valor por metro lineal depende de la altura (1.80m, 2.00m o 2.50m), los metros lineales totales y la topografía del terreno en Puerto Montt y Los Lagos.",
+    details: "En CONCREMONTT entregamos presupuesto inmediato por WhatsApp con desglose de excavación, postes ranurados, placas de hormigón H25 vibrado, fundación y montaje completo.",
+    cta: "Cotizar Panderetas por WhatsApp",
+    badge: "Presupuesto Rápido"
   },
   {
-    id: "faq-resistencias",
-    question: "¿Qué resistencia de hormigón (H20, H25 o H30) necesito para mi radier o galpón?",
-    shortAnswer: "H20 para radieres residenciales y veredas; H25 para galpones y tránsito vehicular; H30 para alto tonelaje y fundaciones pesadas.",
-    details: "Nuestros asesores técnicos revisan el tipo de suelo y uso previsto en Puerto Montt y Los Lagos para recomendar la dosificación exacta sin sobrecostos.",
-    cta: "Consultar Resistencia para mi Obra",
-    badge: "Asesoría Técnica"
+    id: "faq-prefabricados-tipos",
+    question: "¿Qué tipos de prefabricados de hormigón fabrican en Puerto Montt?",
+    shortAnswer: "Fabricamos panderetas reforzadas, pastelones 50x50 antideslizantes, solerillas biseladas y canaletas a piso con rejilla galvanizada.",
+    details: "Todos nuestros prefabricados se elaboran con hormigón H25 de alta compresión y baja absorción, ideales para resistir la humedad y las lluvias del sur de Chile.",
+    cta: "Ver Catálogo de Prefabricados",
+    badge: "Venta de Fábrica"
   },
   {
-    id: "faq-mixer-bombeo",
-    question: "¿Cuáles son las condiciones de acceso para el camión mixer y el servicio de bombeo?",
-    shortAnswer: "Se requiere un acceso despejado de mínimo 3 metros de ancho y terreno firme para camiones de hasta 28 toneladas cargados.",
-    details: "Para distancias superiores a 6 metros desde el camión o radieres interiores, disponemos de servicio de bombeo pluma y bomba estacionaria que agiliza el vaciado.",
-    cta: "Coordinar Inspección de Acceso",
-    badge: "Logística Segura"
+    id: "faq-instalacion-terreno",
+    question: "¿Cómo es el proceso de instalación de panderetas en parcelas y terrenos?",
+    shortAnswer: "Nuestro equipo realiza replanteo y trazado, excavación de hoyos, aplomado de postes con fundación de hormigón y montaje encastrado de placas.",
+    details: "Nos adaptamos a desniveles y pendientes mediante quiebres escalonados, dejando el cerco firme, aplomado y con opción de remate con barda hidráulica corta-gotera.",
+    cta: "Coordinar Visita a Terreno",
+    badge: "Instalación Profesional"
   }
 ];
 

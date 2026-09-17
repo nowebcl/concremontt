@@ -1,48 +1,44 @@
 import React, { useState } from 'react';
-import { companyData, concreteResistances } from '../data/concremonttData';
+import { companyData, panderetaTypes } from '../data/concremonttData';
 import { 
-  Truck, 
+  ShieldCheck, 
   Layers, 
   Warehouse, 
   Building2, 
   ArrowRight, 
   CheckCircle2, 
-  Gauge, 
-  ShieldCheck, 
   Sparkles,
-  MessageCircle,
-  Construction
+  MessageCircle
 } from 'lucide-react';
 
 export default function ServicesSection({ onSelectDetail, onSelectQuote }) {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [selectedGrade, setSelectedGrade] = useState('H25');
+  const [selectedPanderetaCode, setSelectedPanderetaCode] = useState('P200');
 
   const categories = [
     { id: 'all', label: 'Todos los Servicios' },
-    { id: 'hormigon', label: 'Hormigón Preparado & Mixer' },
-    { id: 'estructuras', label: 'Galpones Modulares' },
-    { id: 'obras', label: 'Cierres & Obras Civiles' }
+    { id: 'panderetas', label: 'Panderetas & Cierres' },
+    { id: 'prefabricados', label: 'Prefabricados' },
+    { id: 'estructuras', label: 'Galpones Modulares' }
   ];
 
   const serviceIcons = {
-    'hormigon-preparado-premezclado': Layers,
-    'camion-mixer-despacho': Truck,
-    'bombeo-hormigon-obra': Construction,
-    'radieres-fundaciones': Layers,
-    'galpones-modulares': Warehouse,
-    'panderetas-hormigon': Building2
+    'panderetas-hormigon-puerto-montt': ShieldCheck,
+    'cierres-perimetrales-terreno': Building2,
+    'prefabricados-hormigon-puerto-montt': Layers,
+    'bardas-hidraulicas': Sparkles,
+    'galpones-modulares': Warehouse
   };
 
   const filteredServices = activeCategory === 'all' 
     ? companyData.services 
     : companyData.services.filter(s => s.category === activeCategory);
 
-  const activeResistance = concreteResistances.find(r => r.grade === selectedGrade) || concreteResistances[1];
+  const activePandereta = panderetaTypes.find(p => p.code === selectedPanderetaCode) || panderetaTypes[0];
 
-  const getWhatsAppResistanceLink = (resistance) => {
+  const getWhatsAppPanderetaLink = (pandereta) => {
     const phone = companyData.phoneRaw;
-    const msg = `¡Hola Inversiones Concremontt! Me gustaría cotizar *${resistance.name}* (${resistance.strength}) para mi proyecto en Puerto Montt / Región de Los Lagos. ¿Tienen disponibilidad de camión mixer?`;
+    const msg = `¡Hola Inversiones Concremontt! Me gustaría cotizar *${pandereta.name}* (${pandereta.height}) para mi terreno o parcela en Puerto Montt / Región de Los Lagos. ¿Tienen cuadrilla disponible para instalación?`;
     return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -53,16 +49,16 @@ export default function ServicesSection({ onSelectDetail, onSelectQuote }) {
         {/* Semantic Section Heading with Core SEO Target */}
         <div className="text-center max-w-3xl mx-auto space-y-2.5">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-900 text-[11px] font-black tracking-wider uppercase">
-            <span>Suministro y Transporte de Hormigón</span>
+            <span>Fábrica de Prefabricados & Cierres Perimetrales</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 leading-tight tracking-tight">
-            Venta de Hormigón Preparado y <br className="hidden sm:inline" />
-            Servicio de Bombeo en <span className="text-[#d97706]">Puerto Montt</span>
+            Panderetas de Hormigón y Prefabricados en <br className="hidden sm:inline" />
+            <span className="text-[#d97706]">Puerto Montt</span>
           </h2>
 
           <p className="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            Dosificación computarizada en planta bajo norma NCh170. Flota de camiones mixer de 8 m³ y bomba pluma con cobertura en Puerto Varas, Llanquihue y Los Lagos.
+            Fabricación e instalación de panderetas reforzadas con placas vibradas H25 y postes de hormigón. Venta directa de prefabricados para parcelas en Puerto Montt, Puerto Varas y Región de Los Lagos.
           </p>
 
           {/* Filter Tabs */}
@@ -164,84 +160,84 @@ export default function ServicesSection({ onSelectDetail, onSelectQuote }) {
           })}
         </div>
 
-        {/* Technical Specification Table / Interactive Resistances Selector (H20 / H25 / H30) */}
+        {/* Technical Specification Table / Interactive Panderetas Selector */}
         <div className="bg-white border border-slate-200/90 rounded-[26px] p-5 sm:p-7 shadow-xs space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
               <div className="inline-flex items-center gap-1.5 text-[#d97706] text-[11px] font-black uppercase tracking-wider mb-1">
-                <Gauge className="w-3.5 h-3.5" />
-                <span>Norma NCh170 · Control de Calidad</span>
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span>Norma y Resistencia · Placas Vibradas H25</span>
               </div>
               <h3 className="text-base sm:text-xl font-black text-slate-950 tracking-tight">
-                Tabla Técnica de Resistencias de Hormigón Preparado
+                Modelos y Especificaciones de Panderetas de Hormigón
               </h3>
               <p className="text-slate-500 text-xs mt-0.5">
-                Selecciona la resistencia requerida para ver su especificación de cono y aplicación en obra.
+                Selecciona la altura y tipo de cierre perimetral para ver sus dimensiones y cotizar en obra.
               </p>
             </div>
 
-            {/* Resistance Grade Selector Chips */}
+            {/* Pandereta Selector Chips */}
             <div className="inline-flex items-center p-1 bg-slate-100 rounded-xl gap-1">
-              {concreteResistances.map((item) => (
+              {panderetaTypes.map((item) => (
                 <button
-                  key={item.grade}
-                  onClick={() => setSelectedGrade(item.grade)}
+                  key={item.code}
+                  onClick={() => setSelectedPanderetaCode(item.code)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-black transition-all cursor-pointer ${
-                    selectedGrade === item.grade
+                    selectedPanderetaCode === item.code
                       ? 'bg-[#0f172a] text-white shadow-xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  {item.grade}
+                  {item.name}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Active Resistance Spec Card Grid */}
+          {/* Active Pandereta Spec Card Grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
             
-            {/* Grade Info */}
+            {/* Height Info */}
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 text-left space-y-1">
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Resistencia Cilíndrica</span>
-              <div className="text-base font-black text-slate-900">{activeResistance.strength}</div>
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Altura Útil Libre</span>
+              <div className="text-base font-black text-slate-900">{activePandereta.height}</div>
               <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900">
-                {activeResistance.badge}
+                {activePandereta.badge}
               </span>
             </div>
 
-            {/* Slump / Cono */}
+            {/* Plates & Posts */}
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 text-left space-y-1">
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Asentamiento de Cono</span>
-              <div className="text-base font-black text-slate-900">{activeResistance.slump}</div>
-              <span className="text-[11px] text-slate-500 block">Alta trabajabilidad para bomba o descarga directa</span>
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Armado y Placas</span>
+              <div className="text-xs font-black text-slate-900">{activePandereta.plates}</div>
+              <span className="text-[11px] text-slate-500 block">{activePandereta.posts}</span>
             </div>
 
             {/* Application */}
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 text-left space-y-1 md:col-span-1">
               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Uso Recomendado</span>
               <p className="text-xs font-semibold text-slate-800 leading-snug">
-                {activeResistance.application}
+                {activePandereta.application}
               </p>
             </div>
 
             {/* Action CTA */}
             <div className="flex flex-col gap-2">
               <a
-                href={getWhatsAppResistanceLink(activeResistance)}
+                href={getWhatsAppPanderetaLink(activePandereta)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-xs py-3 px-4 rounded-xl shadow-xs transition-all touch-press"
               >
                 <MessageCircle className="w-4 h-4 fill-white stroke-[#25D366]" />
-                <span>Cotizar {activeResistance.grade} por m³</span>
+                <span>Cotizar {activePandereta.code} por WhatsApp</span>
               </a>
 
               <button
-                onClick={() => onSelectQuote(`Hormigón ${activeResistance.grade}`, 'Hormigón')}
+                onClick={() => onSelectQuote(activePandereta.name, 'Panderetas')}
                 className="text-[11px] font-bold text-slate-600 hover:text-slate-950 transition-colors text-center cursor-pointer"
               >
-                Solicitar cubicación en obra →
+                Solicitar evaluación en terreno →
               </button>
             </div>
 

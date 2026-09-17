@@ -14,49 +14,49 @@ export default function HeroSection({ onOpenQuote }) {
       id: 'slide-1',
       type: 'video',
       src: '/hero.mp4',
-      badge: 'PLANTA PUERTO MONTT · DESPACHO REGIONAL',
-      titleLine1: 'HORMIGÓN PREPARADO',
+      badge: 'FABRICACIÓN E INSTALACIÓN · PUERTO MONTT',
+      titleLine1: 'PANDERETAS DE HORMIGÓN',
       titleLine2: 'EN PUERTO MONTT',
       titleHighlight: true,
-      titleLine3: '& CAMIÓN MIXER',
-      subtitle: 'Venta y despacho de hormigón premezclado H20, H25 y H30 con control de cono. Flota mixer y bombeo para radieres en Puerto Montt, Puerto Varas y Los Lagos.',
-      btnPrimary: 'COTIZAR PRECIO M³',
-      btnSecondary: 'VER RESISTENCIAS H20/H25/H30',
+      titleLine3: '& CIERRES PERIMETRALES',
+      subtitle: 'Fabricación e instalación de panderetas de hormigón en Puerto Montt y la Región de Los Lagos. Placas vibradas H25 con armadura de acero y postes reforzados para parcelas.',
+      btnPrimary: 'COTIZAR PANDERETAS',
+      btnSecondary: 'VER MODELOS Y PRECIOS',
       target: 'servicios',
-      quoteItem: 'Hormigón Preparado por m³',
-      quoteType: 'Hormigón'
+      quoteItem: 'Panderetas de hormigón en puerto Montt',
+      quoteType: 'Panderetas'
     },
     {
       id: 'slide-2',
       type: 'video',
       src: '/hero2.mp4',
-      badge: 'LOGÍSTICA MIXER & BOMBEO EN OBRA',
-      titleLine1: 'BOMBEO Y DESPACHO',
+      badge: 'VENTA DIRECTA DE FÁBRICA · PUERTO MONTT',
+      titleLine1: 'PREFABRICADOS',
       titleLine2: 'DE HORMIGÓN',
       titleHighlight: true,
-      titleLine3: 'DIRECTO A TERRENO',
-      subtitle: 'Flota de camiones mixer de 8 m³ y servicio de bomba pluma para radieres, fundaciones y parcelaciones de difícil acceso con entregas cronometradas.',
-      btnPrimary: 'SOLICITAR MIXER',
-      btnSecondary: 'COBERTURA LOS LAGOS',
-      target: 'cobertura',
-      quoteItem: 'Camión Mixer y Bombeo',
-      quoteType: 'Transporte'
+      titleLine3: 'EN PUERTO MONTT',
+      subtitle: 'Pastelones 50x50, solerillas de confinamiento y canaletas a piso con rejilla galvanizada. Stock permanente para retiro o despacho a terreno en Los Lagos.',
+      btnPrimary: 'VER CATÁLOGO & PRECIOS',
+      btnSecondary: 'PEDIR POR WHATSAPP',
+      target: 'productos',
+      quoteItem: 'Prefabricados de hormigón en puerto Montt',
+      quoteType: 'Prefabricados'
     },
     {
       id: 'slide-3',
       type: 'video',
       src: '/hero3.mp4',
-      badge: 'OBRAS CIVILES & RADIERES INDUSTRIALES',
-      titleLine1: 'RADIERES Y PISOS',
-      titleLine2: 'DE HORMIGÓN',
+      badge: 'INSTALACIÓN PROFESIONAL EN PARCELAS Y TERRENOS',
+      titleLine1: 'PANDERETAS',
+      titleLine2: 'EN PUERTO MONTT',
       titleHighlight: true,
-      titleLine3: 'AFINADO HELICÓPTERO',
-      subtitle: 'Hormigonado de radieres de alto tonelaje para galpones y viviendas. Nivelación láser, corte de juntas y certificación bajo norma NCh170.',
-      btnPrimary: 'COTIZAR RADIER',
-      btnSecondary: 'PREGUNTAS FRECUENTES',
-      target: 'faq',
-      quoteItem: 'Hormigón para Radier',
-      quoteType: 'Obras'
+      titleLine3: 'CIERRES DEFINITIVOS',
+      subtitle: 'Montaje llave en mano con cuadrillas expertas en terreno. Nivelación precisa, fundaciones de hormigón sólido y bardas bota-aguas para máxima durabilidad.',
+      btnPrimary: 'COTIZAR CIERRE EN PARCELA',
+      btnSecondary: 'VER TRABAJOS TERMINADOS',
+      target: 'trabajos',
+      quoteItem: 'Panderetas en puerto Montt',
+      quoteType: 'Panderetas'
     }
   ];
 
@@ -134,11 +134,12 @@ export default function HeroSection({ onOpenQuote }) {
               ref={(el) => (videoRefs.current[index] = el)}
               key={slide.src}
               src={slide.src}
+              poster="/hero-poster.jpg"
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
+              preload={isCurrent ? "metadata" : "none"}
               className="w-full h-full object-cover object-center"
             />
 
@@ -179,19 +180,19 @@ export default function HeroSection({ onOpenQuote }) {
           {/* Caption Small */}
           <p 
             key={`sub-${currentSlide}`}
-            className="text-slate-200 text-xs sm:text-sm font-normal leading-relaxed mb-8 max-w-lg animate-title-slide"
+            className="text-slate-300 text-xs sm:text-sm lg:text-base font-normal max-w-xl leading-relaxed mb-6 sm:mb-8 animate-title-slide"
           >
             {active.subtitle}
           </p>
 
           {/* Slider Buttons Group (Industrus Slider Buttons) */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8">
+          <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-8">
             
-            {/* Primary Button */}
+            {/* Primary Action Button (Yellow Industrus Action) */}
             <button
               onClick={() => onOpenQuote(active.quoteItem, active.quoteType)}
-              aria-label={`Cotizar ${active.quoteItem || 'Hormigón'}`}
-              className="flex items-center gap-2.5 bg-[#fbbd08] hover:bg-white text-slate-950 font-black text-xs sm:text-xs uppercase tracking-wider px-6 py-3 rounded-lg shadow-md transition-all duration-200 touch-press group cursor-pointer"
+              aria-label={`Cotizar ${active.quoteItem}`}
+              className="flex items-center gap-2.5 bg-[#fbbd08] hover:bg-[#eab308] text-slate-950 font-black text-xs uppercase tracking-wider px-6 sm:px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 touch-press cursor-pointer group"
             >
               <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-[#fbbd08] group-hover:bg-[#fbbd08] group-hover:text-black transition-colors">
                 <MessageSquare className="w-3.5 h-3.5 fill-current" />
